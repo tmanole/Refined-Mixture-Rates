@@ -3,7 +3,6 @@ from functions import *
 import sys
 import multiprocessing as mp
 import datetime
-from sklearn import mixture
 import logging
 
 import argparse

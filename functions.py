@@ -1,5 +1,4 @@
 import numpy as np
-from sklearn import mixture
 from copy import deepcopy
 from scipy.stats import multivariate_normal
 
