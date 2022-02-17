@@ -77,9 +77,8 @@ def gauss_loss(theta0, sigma0, pi0, theta, sigma, pi):
             j = vor[i]
             rb = rbar[counts[j]]
             theta_dist = (np.linalg.norm(theta[i,:]-theta0[j,:]))**rb
-            sigma_dist_nondiag = (np.linalg.norm(np.diagonal(sigma[i,:,:]) - np.diagonal(sigma0[j,:,:])))**2
-            sigma_dist_diag = (np.linalg.norm(sigma[i,:,:][mask] - sigma0[j,:,:][mask]))**(rb/2.0)
-            summ += pi[i] * (theta_dist + sigma_dist_nondiag + sigma_dist_diag)
+            sigma_dist = (np.linalg.norm(sigma[i,:,:] - sigma0[j,:,:]))**(rb/2.0)
+            summ += pi[i] * (theta_dist + sigma_dist)
 
     for k in range(K0):
         pi_bar = 0
